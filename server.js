@@ -11,7 +11,7 @@ const connectDB = require('./server/database/connection');
 const app = express();
 
 dotenv.config();
-const PORT = process.env.PORT || 1515
+const PORT = process.env.PORT || 1616
 
 // log requests
 app.use(morgan('tiny'));
@@ -21,6 +21,9 @@ connectDB();
 
 // parse request to body-parser
 app.use(methodOverride('_method'));
+app.use(express.json());
+app.use(express.urlencoded({ extended : false})); //post사용
+
 
 
 // set view engine

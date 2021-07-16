@@ -18,9 +18,9 @@ exports.create = (req,res)=>{
 
     // save user in the database
     user
-        .save(user) //위에서 만든 user객체
+        .save(user)
         .then(data => {
-            res.send(data)
+            //res.send(data)
             res.redirect('/add-user');
         })
         .catch(err =>{
